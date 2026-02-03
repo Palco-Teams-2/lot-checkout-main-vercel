@@ -385,18 +385,25 @@
 
     /* Whop Checkout Mount Styling */
     #indicators-checkout #whop-checkout-mount {
-      min-height: 300px;
+      min-height: 400px;
       overflow: visible !important;
       margin-bottom: 16px;
+      position: relative;
     }
 
     #indicators-checkout #whop-checkout-mount iframe {
       width: 100%;
-      min-height: 300px;
-      height: auto;
+      min-height: 400px !important;
+      height: auto !important;
       border: none;
-      overflow: visible !important;
       display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Force Whop iframe to not clip content */
+    #indicators-checkout #whop-checkout-mount iframe[src*="whop"] {
+      overflow: visible !important;
     }
 
     #indicators-checkout .loading-text {
@@ -520,7 +527,7 @@
 
       <!-- Main Product Checkout (Bottom) -->
       <div class="checkout-container">
-        <div class="loading-text" id="main-loading">Loading secure checkoutâ¦</div>
+        <div class="loading-text" id="main-loading">Loading secure checkout</div>
         <div id="whop-checkout-mount">
           <!-- Initial embed - Whop script will find this on load -->
           <div
@@ -614,6 +621,32 @@
         const hasIframe = container.querySelector('iframe');
         if (hasIframe) {
           loadingEl.style.display = 'none';
+
+          // Force iframe to show full content without clipping
+          hasIframe.style.minHeight = '400px';
+          hasIframe.style.overflow = 'visible';
+
+          // Listen for iframe load to ensure proper sizing
+          hasIframe.addEventListener('load', function() {
+            setTimeout(() => {
+              // Give Whop time to render, then ensure height is sufficient
+              if (hasIframe.contentWindow) {
+                try {
+                  const iframeDoc = hasIframe.contentDocument || hasIframe.contentWindow.document;
+                  if (iframeDoc && iframeDoc.body) {
+                    const contentHeight = iframeDoc.body.scrollHeight;
+                    if (contentHeight > 400) {
+                      hasIframe.style.height = contentHeight + 'px';
+                    }
+                  }
+                } catch (e) {
+                  // Cross-origin, can't access - just ensure min height
+                  console.log('Whop iframe loaded (cross-origin)');
+                }
+              }
+            }, 500);
+          });
+
           return;
         }
         if (tries++ < 50) {
