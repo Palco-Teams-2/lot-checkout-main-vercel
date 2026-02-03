@@ -379,8 +379,24 @@
 
     /* Main Checkout Container */
     #indicators-checkout .checkout-container {
-      min-height: 400px;
+      min-height: 500px;
       padding: 0;
+    }
+
+    /* Whop Checkout Mount Styling */
+    #indicators-checkout #whop-checkout-mount {
+      min-height: 300px;
+      overflow: visible !important;
+      margin-bottom: 16px;
+    }
+
+    #indicators-checkout #whop-checkout-mount iframe {
+      width: 100%;
+      min-height: 300px;
+      height: auto;
+      border: none;
+      overflow: visible !important;
+      display: block;
     }
 
     #indicators-checkout .loading-text {
@@ -507,7 +523,7 @@
         <div class="loading-text" id="main-loading">Loading secure checkoutâ¦</div>
         <div id="whop-checkout-mount">
           <!-- Initial embed - Whop script will find this on load -->
-          <div 
+          <div
             data-whop-checkout-plan-id="plan_H3aw3n7IvJDzN"
             data-whop-checkout-theme="light"
             data-whop-checkout-theme-accent-color="gray"
