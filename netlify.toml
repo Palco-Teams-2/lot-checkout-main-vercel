@@ -1,5 +1,5 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "frame-ancestors * 'self' https://*.framer.app https://*.framer.website https://*.framercanvas.com"
+    Content-Security-Policy = "frame-ancestors 'self' https://silly-number-958676.framer.app https://*.framer.app https://*.framer.website https://*.framercanvas.com *"
     Access-Control-Allow-Origin = "*"

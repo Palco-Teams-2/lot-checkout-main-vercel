@@ -439,13 +439,11 @@
             data-whop-checkout-hide-price="true"
             data-whop-checkout-hide-tos="true"
             data-whop-checkout-hide-email="true"
-            data-whop-checkout-hide-submit-button="true"
             data-whop-checkout-prefill-email="adrianpaleka@gmail.com"
           ></div>
         </div>
 
-        <button class="custom-checkout-btn" id="custom-checkout-btn" type="button">Get Instant Access</button>
-        <p style="text-align: center; font-size: 11px; color: #666666; margin: 24px 0 0 0; line-height: 1.5; white-space: nowrap; font-weight: 500;">We do not store any of your card information. All payments are securely processed with 256-bit SSL encryption.</p>
+        <p style="text-align: center; font-size: 11px; color: #666666; margin: 16px 0 0 0; line-height: 1.5; white-space: nowrap; font-weight: 500;">We do not store any of your card information. All payments are securely processed with 256-bit SSL encryption.</p>
         <div class="checkout-badges">
           <img src="https://i.imgur.com/jWBwCk9.png" alt="Payment badges" style="display: block; margin: 4px auto 0; max-width: 95%; height: auto;">
         </div>
@@ -500,7 +498,6 @@
       embedDiv.setAttribute('data-whop-checkout-hide-price', 'true');
       embedDiv.setAttribute('data-whop-checkout-hide-tos', 'true');
       embedDiv.setAttribute('data-whop-checkout-hide-email', 'true');
-      embedDiv.setAttribute('data-whop-checkout-hide-submit-button', 'true');
       embedDiv.setAttribute('data-whop-checkout-prefill-email', 'adrianpaleka@gmail.com');
       
       container.appendChild(embedDiv);
@@ -555,11 +552,6 @@
         btn.addEventListener('click', () => {
           toggleAddon(btn.dataset.addonCheckbox);
         });
-      });
-
-      // Custom checkout button
-      qs('#custom-checkout-btn').addEventListener('click', () => {
-        window.wco.submit('whop-checkout-mount');
       });
     }
 
