@@ -40,10 +40,10 @@
       padding: 23px 24px;
       background: linear-gradient(180deg, #3678e6 0%, #2159de 100%);
       color: white;
-      font-size: 20px;
-      font-weight: 700;
+      font-size: 22px;
+      font-weight: 600;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       transition: all 0.15s ease;
       font-family: inherit;
@@ -105,10 +105,10 @@
     #indicators-checkout .addon-card::before {
       content: '';
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: -100%;
       width: 200%;
-      height: 100%;
+      height: 60%;
       background: linear-gradient(
         90deg,
         transparent 0%,
@@ -169,6 +169,7 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 4px;
+      padding-top: 12px;
     }
 
     #indicators-checkout .addon-title {
@@ -219,9 +220,16 @@
 
     #indicators-checkout .addon-expanded-text {
       font-size: 12px;
-      color: #666666;
+      color: #000000;
       line-height: 1.5;
       margin-top: 0;
+    }
+
+    #indicators-checkout .addon-offer-label {
+      font-weight: 700;
+      color: #ef4444;
+      text-decoration: underline;
+      display: inline;
     }
 
     /* Addon Checkbox Button */
@@ -392,14 +400,14 @@
           <div class="addon-content">
             <h4 class="addon-title">TJR's Risk Management Calculator</h4>
             <div class="addon-pricing">
-              <span class="addon-price-current">$27</span>
-              <span class="addon-price-original">$79</span>
+              <span class="addon-price-current">$77</span>
+              <span class="addon-price-original">$249</span>
             </div>
           </div>
           <button class="addon-checkbox" data-addon-checkbox="riskCalc" type="button"></button>
           <div class="addon-expanded-content">
             <div class="addon-expanded-text">
-              The ultimate solution for optimizing your trading decisions. Perfect for everyday use, it provides long-lasting insights and protection against market volatility. Equipped with advanced algorithms and real-time data analysis, this tool helps you identify potential risks and maximize your trading potential across multiple strategies and timeframes.
+              <span class="addon-offer-label">ONE-TIME OFFER:</span> Get instant access to the powerful calculator TJR uses to lock in the exact risk you should take on every trade - so you stay consistent, protect your capital, and trade with confidence. It shows you how much to risk, how many contracts to trade, and when to walk away - based on math, not emotion. Only available on this page for just $77.
             </div>
           </div>
         </div>
@@ -418,14 +426,14 @@
           <div class="addon-content">
             <h4 class="addon-title">TJR's Trading Journal 2.0</h4>
             <div class="addon-pricing">
-              <span class="addon-price-current">$47</span>
+              <span class="addon-price-current">$57</span>
               <span class="addon-price-original">$199</span>
             </div>
           </div>
           <button class="addon-checkbox" data-addon-checkbox="tradingJournal" type="button"></button>
           <div class="addon-expanded-content">
             <div class="addon-expanded-text">
-              Track every trade with precision using our comprehensive trading journal platform. Record detailed entries for each trade, analyze patterns, and optimize your strategy over time. Features include real-time performance metrics, win/loss analysis, and customizable templates to help you maintain consistency and improve your trading discipline and profitability.
+              <span class="addon-offer-label">ONE-TIME OFFER:</span> Get instant access to the exact journal TJR uses to track setups, wins/losses, and emotional mistakes - so you can spot patterns, fix leaks, and level up faster. Only available on this page for just $57.
             </div>
           </div>
         </div>
@@ -443,14 +451,16 @@
             data-whop-checkout-return-url="https://google.com"
             data-whop-checkout-hide-price="true"
             data-whop-checkout-hide-tos="true"
-            data-whop-checkout-hide-email="false"
+            data-whop-checkout-hide-email="true"
             data-whop-checkout-hide-submit-button="true"
             data-whop-checkout-prefill-email="adrianpaleka@gmail.com"
           ></div>
         </div>
 
-        <button class="custom-checkout-btn" id="custom-checkout-btn" type="button">Get Access Now</button>
+        <button class="custom-checkout-btn" id="custom-checkout-btn" type="button">Get Instant Access</button>
+        <p style="text-align: center; font-size: 11px; color: #666666; margin: 24px 0 0 0; line-height: 1.5; white-space: nowrap; font-weight: 500;">We do not store any of your card information. All payments are securely processed with 256-bit SSL encryption.</p>
         <div class="checkout-badges">
+          <img src="https://i.imgur.com/jWBwCk9.png" alt="Payment badges" style="display: block; margin: 4px auto 0; max-width: 95%; height: auto;">
         </div>
       </div>
 
@@ -502,7 +512,7 @@
       embedDiv.setAttribute('data-whop-checkout-return-url', 'https://google.com');
       embedDiv.setAttribute('data-whop-checkout-hide-price', 'true');
       embedDiv.setAttribute('data-whop-checkout-hide-tos', 'true');
-      embedDiv.setAttribute('data-whop-checkout-hide-email', 'false');
+      embedDiv.setAttribute('data-whop-checkout-hide-email', 'true');
       embedDiv.setAttribute('data-whop-checkout-hide-submit-button', 'true');
       embedDiv.setAttribute('data-whop-checkout-prefill-email', 'adrianpaleka@gmail.com');
       
