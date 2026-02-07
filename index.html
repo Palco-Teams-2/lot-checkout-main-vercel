@@ -168,12 +168,12 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 4px;
+      gap: 3px;
       padding-top: 12px;
     }
 
     #indicators-checkout .addon-title {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 600;
       color: #1a1a1a;
       margin: 0;
@@ -207,7 +207,7 @@
       display: block;
       grid-column: 1 / -1;
       margin-top: 0;
-      padding: 12px 16px;
+      padding: 18px 16px;
       border-top: 1px solid #e0e0e0;
       position: relative;
       background: #ffffff;
@@ -216,6 +216,15 @@
       margin-bottom: -16px;
       border-radius: 0 0 10px 10px;
       z-index: 1;
+    }
+
+    /* Specific positioning adjustments for addon expanded content */
+    #indicators-checkout .addon-card:nth-of-type(1) .addon-expanded-content {
+      margin-top: -18px;
+    }
+
+    #indicators-checkout .addon-card:nth-of-type(2) .addon-expanded-content {
+      margin-top: -13.5px;
     }
 
     #indicators-checkout .addon-expanded-text {
@@ -376,6 +385,25 @@
         width: 16px;
         height: 16px;
       }
+
+      #indicators-checkout #whop-checkout-mount {
+        width: 100%;
+        overflow: visible !important;
+      }
+
+      #indicators-checkout #whop-checkout-mount iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 300px;
+        height: auto !important;
+        display: block !important;
+        overflow: visible !important;
+      }
+
+      #indicators-checkout .checkout-container {
+        width: 100%;
+        overflow: visible;
+      }
     }
   </style>
 
@@ -400,7 +428,7 @@
           <button class="addon-checkbox" data-addon-checkbox="riskCalc" type="button"></button>
           <div class="addon-expanded-content">
             <div class="addon-expanded-text">
-              <span class="addon-offer-label">ONE-TIME OFFER:</span> Get instant access to the powerful calculator TJR uses to lock in the exact risk you should take on every trade - so you stay consistent, protect your capital, and trade with confidence. It shows you how much to risk, how many contracts to trade, and when to walk away - based on math, not emotion. Only available on this page for just $77.
+              <span class="addon-offer-label">ONE-TIME OFFER:</span> Get instant access to the powerful calculator TJR uses to lock in the exact risk you should take on every trade. You'll know how much to risk, how many contracts to trade, and when to walk away - based on math, not emotion. Only available on this page for just $77.
             </div>
           </div>
         </div>
