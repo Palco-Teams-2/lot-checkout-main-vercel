@@ -349,6 +349,43 @@
       margin: 12px 0;
     }
 
+    /* Guarantee Section */
+    #indicators-checkout .guarantee-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: linear-gradient(135deg, #fef9e7 0%, #fcefc7 100%);
+      border: 1px solid #f4d58d;
+      border-radius: 12px;
+      padding: 12px 24px;
+      margin-top: 24px;
+      box-shadow: 0 2px 8px rgba(244, 180, 26, 0.1);
+    }
+
+    #indicators-checkout .guarantee-badge {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #indicators-checkout .guarantee-text {
+      flex: 1;
+    }
+
+    #indicators-checkout .guarantee-text p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 18px;
+      color: #1a1a1a;
+      font-family: inherit;
+    }
+
+    #indicators-checkout .guarantee-text strong {
+      font-weight: 600;
+      color: #000000;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       #indicators-checkout .checkout-card {
@@ -403,6 +440,22 @@
       #indicators-checkout .checkout-container {
         width: 100%;
         overflow: visible;
+      }
+
+      #indicators-checkout .guarantee-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        padding: 16px 20px;
+      }
+
+      #indicators-checkout .guarantee-badge svg {
+        width: 60px;
+        height: 60px;
+      }
+
+      #indicators-checkout .guarantee-text p {
+        font-size: 13px;
       }
     }
   </style>
@@ -474,6 +527,16 @@
         <p style="text-align: center; font-size: 11px; color: #666666; margin: 16px 0 0 0; line-height: 1.5; white-space: nowrap; font-weight: 500;">We do not store any of your card information. All payments are securely processed with 256-bit SSL encryption.</p>
         <div class="checkout-badges">
           <img src="https://i.imgur.com/jWBwCk9.png" alt="Payment badges" style="display: block; margin: 4px auto 0; max-width: 95%; height: auto;">
+        </div>
+
+        <!-- Money Back Guarantee Section -->
+        <div class="guarantee-section">
+          <div class="guarantee-badge">
+            <img src="https://i.imgur.com/iEgt84X.png" alt="Money Back Guarantee" style="width: 90px; height: 90px; object-fit: contain;">
+          </div>
+          <div class="guarantee-text">
+            <p><strong>Risk free 30-day money back guarantee:</strong> if you try it out and don't see immediate value, we'll give you a 100% refund - no questions asked.</p>
+          </div>
         </div>
       </div>
 
