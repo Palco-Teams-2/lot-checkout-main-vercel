@@ -1,7 +1,13 @@
 {
+  "redirects": [
+    {
+      "source": "/test123",
+      "destination": "https://google.com"
+    }
+  ],
   "headers": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "X-Frame-Options",
