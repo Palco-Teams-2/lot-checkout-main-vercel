@@ -34,25 +34,29 @@
       margin: 8px 0 4px 0;
     }
 
-    /* Custom Checkout Button */
-    #indicators-checkout .custom-checkout-btn {
-      width: 100%;
-      padding: 23px 24px;
-      background: linear-gradient(180deg, #3678e6 0%, #2159de 100%);
-      color: white;
-      font-size: 22px;
-      font-weight: 600;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.15s ease;
-      font-family: inherit;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 0 #2159de, 0 6px 12px rgba(33,89,222,0.35), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 0 0 1px rgba(0,0,0,0.08), inset 0 -1px 3px rgba(0,0,0,0.1);
-      margin-top: 0;
-      animation: subtleBounce 3s ease-in-out infinite;
-    }
+      /* Custom Checkout Button */
+            #indicators-checkout .custom-checkout-btn {
+              width: 100%;
+              max-width: 652px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 22px 28px;
+            background: linear-gradient(180deg, #3678e6 0%, #2159de 100%);
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            font-family: inherit;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 0 #2159de, 0 6px 12px rgba(33,89,222,0.35), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 0 0 1px rgba(0,0,0,0.08), inset 0 -1px 3px rgba(0,0,0,0.1);
+            margin-top: 0;
+            display: block;
+            animation: subtleBounce 3s ease-in-out infinite;
+          }
 
     @keyframes subtleBounce {
       0%, 100% {
@@ -86,21 +90,107 @@
       letter-spacing: 0.5px;
     }
 
-    /* Addon Cards */
-    #indicators-checkout .addon-card {
-      display: grid;
-      grid-template-columns: 64px 1fr 48px;
-      align-items: flex-start;
-      gap: 26px;
-      padding: 16px;
-      background: rgba(255, 249, 220, 0.92);
-      border: 2.1px dashed #888888;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
+          /* Order Summary */
+          #indicators-checkout .order-summary {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 4px 0;
+            margin-bottom: 2px;
+            margin-top: 12px;
+            font-family: Inter, sans-serif;
+            max-width: 89%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+        #indicators-checkout .order-summary-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 16px;
+          padding-top: 8px;
+          padding-bottom: 12px;
+          border-bottom: 1px solid #e0e0e0;
+        }
+
+      #indicators-checkout .order-summary-header h3 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+
+      #indicators-checkout .order-summary-header span {
+        font-size: 14px;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+
+      #indicators-checkout .order-summary-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+
+      #indicators-checkout .order-summary-item .item-name {
+        color: #4b5563;
+        font-weight: 400;
+      }
+
+      #indicators-checkout .order-summary-item .item-price {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      #indicators-checkout .order-summary-item .price-original {
+        color: #9ca3af;
+        text-decoration: line-through;
+        font-size: 13px;
+      }
+
+      #indicators-checkout .order-summary-item .price-current {
+        color: #0052cc;
+        font-weight: 600;
+      }
+
+      #indicators-checkout .order-summary-total {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 12px;
+          padding-top: 12px;
+          border-top: 1px solid #e0e0e0;
+          font-size: 14px;
+          font-weight: 700;
+        }
+
+      #indicators-checkout .order-summary-total .total-label {
+        color: #1a1a1a;
+      }
+
+      #indicators-checkout .order-summary-total .total-amount {
+        color: #0052cc;
+      }
+
+      /* Addon Cards */
+      #indicators-checkout .addon-card {
+        display: grid;
+        grid-template-columns: 64px 1fr 48px;
+        align-items: flex-start;
+        gap: 26px;
+        padding: 16px;
+        background: rgba(255, 249, 220, 0.92);
+        border: 2.1px dashed #888888;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
 
     #indicators-checkout .addon-card::before {
       content: '';
@@ -509,33 +599,54 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Main Product Checkout (Bottom) -->
-      <div class="checkout-container">
-        <div class="loading-text" id="main-loading">Loading secure checkout</div>
-        <div id="whop-checkout-mount">
-          <!-- Initial embed - Whop script will find this on load -->
-          <div
-            data-whop-checkout-plan-id="plan_H3aw3n7IvJDzN"
-            data-whop-checkout-theme="light"
-            data-whop-checkout-theme-accent-color="gray"
-            data-whop-checkout-return-url="https://google.com"
-            data-whop-checkout-hide-price="true"
-            data-whop-checkout-hide-tos="true"
-            data-whop-checkout-hide-email="true"
-            data-whop-checkout-hide-address="true"
-            data-whop-checkout-prefill-email="adrianpaleka@gmail.com"
-          ></div>
         </div>
 
-        <p style="text-align: center; font-size: 11px; color: #666666; margin: 16px 0 0 0; line-height: 1.5; white-space: nowrap; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 4px;">
-          <svg width="12" height="13" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
-            <path d="M10 0.5L1 4V10C1 15.5 4.5 20.5 10 21.5C15.5 20.5 19 15.5 19 10V4L10 0.5Z" fill="#16a34a"/>
-            <path d="M6 10.5L8.5 13L14 7.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span style="font-size: 11.5px;">We do not store any of your card information. Payments are securely encrypted & processed by Stripe.</span>
-        </p>
+        <!-- Order Summary -->
+        <div class="order-summary" id="order-summary">
+          <div class="order-summary-header">
+            <h3>Selected Products</h3>
+            <span>Amount</span>
+          </div>
+          <div id="order-summary-items">
+            <!-- Dynamically populated -->
+          </div>
+            <div class="order-summary-total">
+              <span class="total-label">Total <span style="font-weight: 400; font-size: 12px; color: #6b7280;">(One-Time Payment)</span></span>
+              <span class="total-amount" id="order-total">$97</span>
+            </div>
+        </div>
+
+          <!-- Main Product Checkout (Bottom) -->
+        <div class="checkout-container">
+          <div class="loading-text" id="main-loading">Loading secure checkout</div>
+          <div id="whop-checkout-mount">
+            <!-- Initial embed - Whop script will find this on load -->
+            <div
+              data-whop-checkout-plan-id="plan_H3aw3n7IvJDzN"
+              data-whop-checkout-theme="light"
+                data-whop-checkout-theme-accent-color="blue"
+              data-whop-checkout-return-url="https://google.com"
+              data-whop-checkout-hide-price="true"
+              data-whop-checkout-hide-tos="true"
+              data-whop-checkout-hide-email="true"
+                data-whop-checkout-hide-address="false"
+              data-whop-checkout-prefill-email="adrianpaleka@gmail.com"
+              data-whop-checkout-hide-submit-button="true"
+            ></div>
+          </div>
+
+          <button class="custom-checkout-btn" id="custom-checkout-btn" type="button">Get Access Now</button>
+
+                  <p style="text-align: center; font-size: 10.5px; color: #666666; margin: 14px 0 0 0; line-height: 1.5; font-weight: 500; max-width: 652px; margin-left: auto; margin-right: auto;">
+            <span style="display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 6px;">
+              <svg width="12" height="13" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+                <path d="M10 0.5L1 4V10C1 15.5 4.5 20.5 10 21.5C15.5 20.5 19 15.5 19 10V4L10 0.5Z" fill="#16a34a"/>
+                <path d="M6 10.5L8.5 13L14 7.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span style="font-size: 10.9px;">We do not store any of your card information. Payments are securely encrypted & processed by Stripe.</span>
+            </span>
+
+          </p>
         <div class="checkout-badges">
           <img src="https://i.imgur.com/jWBwCk9.png" alt="Payment badges" style="display: block; margin: 4px auto 0; max-width: 95%; height: auto;">
         </div>
@@ -555,14 +666,21 @@
   </div>
 
   <script>
-    // ===== Plan Configuration (Combo Plans) =====
-    const PLAN_MAP = {
-      // [riskCalc, tradingJournal] â planId
-      'false,false': 'plan_H3aw3n7IvJDzN',      // Main only
-      'true,false':  'plan_yOnczbRi8luJR',      // Main + Risk Calculator
-      'false,true':  'plan_0RuJva4sozlDt',      // Main + Trading Journal
-      'true,true':   'plan_BGTaQDcKjWjCb'       // Main + Both
-    };
+      // ===== Plan Configuration (Combo Plans) =====
+      const PLAN_MAP = {
+        // [riskCalc, tradingJournal] â planId
+        'false,false': 'plan_H3aw3n7IvJDzN',      // Main only
+        'true,false':  'plan_yOnczbRi8luJR',      // Main + Risk Calculator
+        'false,true':  'plan_0RuJva4sozlDt',      // Main + Trading Journal
+        'true,true':   'plan_BGTaQDcKjWjCb'       // Main + Both
+      };
+
+      // ===== Pricing Configuration =====
+      const PRICING = {
+        indicatorBundle: { original: 297, current: 97 },
+        riskCalc: { original: 249, current: 77 },
+        tradingJournal: { original: 199, current: 57 }
+      };
 
     // ===== State =====
     const state = {
@@ -595,15 +713,16 @@
       const embedDiv = document.createElement('div');
       embedDiv.setAttribute('data-whop-checkout-plan-id', planId);
       embedDiv.setAttribute('data-whop-checkout-theme', 'light');
-      embedDiv.setAttribute('data-whop-checkout-theme-accent-color', 'gray');
+        embedDiv.setAttribute('data-whop-checkout-theme-accent-color', 'blue');
       embedDiv.setAttribute('data-whop-checkout-return-url', 'https://google.com');
       embedDiv.setAttribute('data-whop-checkout-hide-price', 'true');
       embedDiv.setAttribute('data-whop-checkout-hide-tos', 'true');
       embedDiv.setAttribute('data-whop-checkout-hide-email', 'true');
-      embedDiv.setAttribute('data-whop-checkout-hide-address', 'true');
-      embedDiv.setAttribute('data-whop-checkout-prefill-email', 'adrianpaleka@gmail.com');
-      
-      container.appendChild(embedDiv);
+          embedDiv.setAttribute('data-whop-checkout-hide-address', 'false');
+        embedDiv.setAttribute('data-whop-checkout-prefill-email', 'adrianpaleka@gmail.com');
+        embedDiv.setAttribute('data-whop-checkout-hide-submit-button', 'true');
+        
+        container.appendChild(embedDiv);
 
       // Hide loading indicator once iframe appears
       hideLoadingWhenReady();
@@ -628,43 +747,110 @@
       })();
     }
 
-    // ===== Toggle Addon Selection =====
-    function toggleAddon(addonKey) {
-      state.addons[addonKey] = !state.addons[addonKey];
+      // ===== Update Order Summary =====
+      function updateOrderSummary() {
+        const itemsContainer = qs('#order-summary-items');
+        const totalEl = qs('#order-total');
+        if (!itemsContainer || !totalEl) return;
 
-      // Update UI for all matching cards (top and bottom sections)
-      qsa(`[data-addon="${addonKey}"]`).forEach(card => {
-        card.classList.toggle('selected', state.addons[addonKey]);
-      });
-      qsa(`[data-addon-checkbox="${addonKey}"]`).forEach(checkbox => {
-        checkbox.classList.toggle('checked', state.addons[addonKey]);
-      });
-      
-      // Show loading again while checkout updates
-      const loadingEl = qs('#main-loading');
-      if (loadingEl) loadingEl.style.display = 'block';
-      
-      // Update Whop checkout with new plan
-      mountWhopCheckout();
-    }
+        let items = [];
+        let total = 0;
 
-    // ===== Event Binding =====
-    function bindEvents() {
-      // Addon checkbox buttons
-      qsa('[data-addon-checkbox]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          toggleAddon(btn.dataset.addonCheckbox);
+          // Always include indicator bundle
+          items.push({
+            name: 'Indicator Bundle',
+            original: PRICING.indicatorBundle.original,
+            current: PRICING.indicatorBundle.current
+          });
+          total += PRICING.indicatorBundle.current;
+
+          // Add selected addons
+          if (state.addons.riskCalc) {
+            items.push({
+              name: "Risk Management Calculator",
+              original: PRICING.riskCalc.original,
+              current: PRICING.riskCalc.current
+            });
+            total += PRICING.riskCalc.current;
+          }
+
+          if (state.addons.tradingJournal) {
+            items.push({
+              name: "Trading Journal 2.0",
+              original: PRICING.tradingJournal.original,
+              current: PRICING.tradingJournal.current
+            });
+            total += PRICING.tradingJournal.current;
+          }
+
+        // Render items
+        itemsContainer.innerHTML = items.map(item => `
+          <div class="order-summary-item">
+            <span class="item-name">${item.name}</span>
+            <span class="item-price">
+              <span class="price-original">$${item.original}</span>
+              <span class="price-current">$${item.current}</span>
+            </span>
+          </div>
+        `).join('');
+
+        // Update total
+        totalEl.textContent = `$${total}`;
+      }
+
+      // ===== Toggle Addon Selection =====
+      function toggleAddon(addonKey) {
+        state.addons[addonKey] = !state.addons[addonKey];
+
+        // Update UI for all matching cards (top and bottom sections)
+        qsa(`[data-addon="${addonKey}"]`).forEach(card => {
+          card.classList.toggle('selected', state.addons[addonKey]);
         });
-      });
-    }
+        qsa(`[data-addon-checkbox="${addonKey}"]`).forEach(checkbox => {
+          checkbox.classList.toggle('checked', state.addons[addonKey]);
+        });
+        
+        // Update order summary
+        updateOrderSummary();
+        
+        // Show loading again while checkout updates
+        const loadingEl = qs('#main-loading');
+        if (loadingEl) loadingEl.style.display = 'block';
+        
+        // Update Whop checkout with new plan
+        mountWhopCheckout();
+      }
 
-    // ===== Initialization =====
-    function init() {
-      bindEvents();
+      // ===== Event Binding =====
+      function bindEvents() {
+        // Addon checkbox buttons
+        qsa('[data-addon-checkbox]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            toggleAddon(btn.dataset.addonCheckbox);
+          });
+        });
 
-      // Hide loading when iframe appears
-      hideLoadingWhenReady();
-    }
+        // Custom checkout button
+        const customBtn = qs('#custom-checkout-btn');
+        if (customBtn) {
+          customBtn.addEventListener('click', () => {
+            if (window.wco && window.wco.submit) {
+              window.wco.submit('whop-checkout-mount');
+            }
+          });
+        }
+      }
+
+      // ===== Initialization =====
+      function init() {
+        bindEvents();
+
+        // Initialize order summary
+        updateOrderSummary();
+
+        // Hide loading when iframe appears
+        hideLoadingWhenReady();
+      }
 
     // ===== Run =====
     if (document.readyState !== 'loading') {
