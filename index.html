@@ -90,19 +90,19 @@
       letter-spacing: 0.5px;
     }
 
-          /* Order Summary */
-          #indicators-checkout .order-summary {
-            background: transparent;
-            border: none;
-            border-radius: 0;
-            padding: 4px 0;
-            margin-bottom: 2px;
-            margin-top: 12px;
-            font-family: Inter, sans-serif;
-            max-width: 89%;
-            margin-left: auto;
-            margin-right: auto;
-          }
+              /* Order Summary */
+                #indicators-checkout .order-summary {
+                  background: transparent;
+                  border: none;
+                  border-radius: 0;
+                  padding: 0;
+                  margin-bottom: 6px;
+                  margin-top: 0;
+                  font-family: Inter, sans-serif;
+                  max-width: 89%;
+                  margin-left: auto;
+                  margin-right: auto;
+                }
 
         #indicators-checkout .order-summary-header {
           display: flex;
@@ -157,16 +157,17 @@
         font-weight: 600;
       }
 
-      #indicators-checkout .order-summary-total {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-top: 12px;
-          padding-top: 12px;
-          border-top: 1px solid #e0e0e0;
-            font-size: 15px;
-            font-weight: 700;
-          }
+        #indicators-checkout .order-summary-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+            padding-top: 12px;
+            padding-bottom: 7%;
+            border-top: 1px solid #e0e0e0;
+              font-size: 15px;
+              font-weight: 700;
+            }
 
       #indicators-checkout .order-summary-total .total-label {
         color: #1a1a1a;
@@ -599,43 +600,43 @@
             </div>
           </div>
         </div>
-        </div>
+          </div>
 
-        <!-- Order Summary -->
-        <div class="order-summary" id="order-summary">
-          <div class="order-summary-header">
-            <h3>Selected Products</h3>
-            <span>Amount</span>
-          </div>
-          <div id="order-summary-items">
-            <!-- Dynamically populated -->
-          </div>
-            <div class="order-summary-total">
-              <span class="total-label">Total <span style="font-weight: 400; font-size: 12px; color: #6b7280;">(One-Time Payment)</span></span>
-              <span class="total-amount" id="order-total">$97</span>
+            <!-- Main Product Checkout (Bottom) -->
+          <div class="checkout-container">
+            <div class="loading-text" id="main-loading">Loading secure checkout</div>
+            <div id="whop-checkout-mount">
+              <!-- Initial embed - Whop script will find this on load -->
+              <div
+                data-whop-checkout-plan-id="plan_H3aw3n7IvJDzN"
+                data-whop-checkout-theme="light"
+                  data-whop-checkout-theme-accent-color="blue"
+                data-whop-checkout-return-url="https://google.com"
+                data-whop-checkout-hide-price="true"
+                data-whop-checkout-hide-tos="true"
+                data-whop-checkout-hide-email="true"
+                  data-whop-checkout-hide-address="false"
+                data-whop-checkout-prefill-email="adrianpaleka@gmail.com"
+                data-whop-checkout-hide-submit-button="true"
+              ></div>
             </div>
-        </div>
 
-          <!-- Main Product Checkout (Bottom) -->
-        <div class="checkout-container">
-          <div class="loading-text" id="main-loading">Loading secure checkout</div>
-          <div id="whop-checkout-mount">
-            <!-- Initial embed - Whop script will find this on load -->
-            <div
-              data-whop-checkout-plan-id="plan_H3aw3n7IvJDzN"
-              data-whop-checkout-theme="light"
-                data-whop-checkout-theme-accent-color="blue"
-              data-whop-checkout-return-url="https://google.com"
-              data-whop-checkout-hide-price="true"
-              data-whop-checkout-hide-tos="true"
-              data-whop-checkout-hide-email="true"
-                data-whop-checkout-hide-address="false"
-              data-whop-checkout-prefill-email="adrianpaleka@gmail.com"
-              data-whop-checkout-hide-submit-button="true"
-            ></div>
+          <!-- Order Summary -->
+          <div class="order-summary" id="order-summary">
+            <div class="order-summary-header">
+              <h3>Order Summary</h3>
+              <span>Amount</span>
+            </div>
+            <div id="order-summary-items">
+              <!-- Dynamically populated -->
+            </div>
+              <div class="order-summary-total">
+                <span class="total-label">Total <span style="font-weight: 400; font-size: 12px; color: #6b7280;">(One-Time Payment)</span></span>
+                <span class="total-amount" id="order-total">$97</span>
+              </div>
           </div>
 
-          <button class="custom-checkout-btn" id="custom-checkout-btn" type="button">Get Access Now</button>
+            <button class="custom-checkout-btn" id="custom-checkout-btn" type="button">Get Access Now</button>
 
                   <p style="text-align: center; font-size: 10.5px; color: #666666; margin: 14px 0 0 0; line-height: 1.5; font-weight: 500; max-width: 652px; margin-left: auto; margin-right: auto;">
             <span style="display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 6px;">

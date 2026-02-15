@@ -3,5 +3,7 @@
   "createdAt": 1739318400000,
   "startupCommands": [
     "python3 -m http.server 8000"
-  ]
+  ],
+  "vercelProjectId": "prj_B1v6NMOyY8RqlE1XAJh6kG6bjwr0",
+  "deployedWithUserToken": false
 }
