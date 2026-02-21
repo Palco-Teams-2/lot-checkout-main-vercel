@@ -34,48 +34,6 @@
       margin: 8px 0 4px 0;
     }
 
-      /* Custom Checkout Button */
-            #indicators-checkout .custom-checkout-btn {
-              width: 100%;
-              max-width: 652px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 22px 28px;
-            background: linear-gradient(180deg, #3678e6 0%, #2159de 100%);
-            color: white;
-            font-size: 20px;
-            font-weight: 600;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            font-family: inherit;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 0 #2159de, 0 6px 12px rgba(33,89,222,0.35), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 0 0 1px rgba(0,0,0,0.08), inset 0 -1px 3px rgba(0,0,0,0.1);
-            margin-top: 0;
-            display: block;
-            animation: subtleBounce 3s ease-in-out infinite;
-          }
-
-    @keyframes subtleBounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-2px);
-      }
-    }
-
-    #indicators-checkout .custom-checkout-btn:hover {
-      background: linear-gradient(180deg, #4080e8 0%, #2a65e5 100%);
-    }
-
-    #indicators-checkout .custom-checkout-btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 2px 0 #2159de, 0 3px 6px rgba(33,89,222,0.35), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 0 0 1px rgba(0,0,0,0.08), inset 0 -1px 3px rgba(0,0,0,0.1);
-    }
-
     /* Addons Section */
     #indicators-checkout .addons-section {
       margin-bottom: 4px;
@@ -631,11 +589,9 @@
               data-whop-checkout-hide-email="true"
                 data-whop-checkout-hide-address="false"
               data-whop-checkout-prefill-email="adrianpaleka@gmail.com"
-              data-whop-checkout-hide-submit-button="true"
+              data-whop-checkout-hide-submit-button="false"
             ></div>
           </div>
-
-          <button class="custom-checkout-btn" id="custom-checkout-btn" type="button">Get Access Now</button>
 
                   <p style="text-align: center; font-size: 10.5px; color: #666666; margin: 14px 0 0 0; line-height: 1.5; font-weight: 500; max-width: 652px; margin-left: auto; margin-right: auto;">
             <span style="display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 6px;">
@@ -720,7 +676,7 @@
       embedDiv.setAttribute('data-whop-checkout-hide-email', 'true');
           embedDiv.setAttribute('data-whop-checkout-hide-address', 'false');
         embedDiv.setAttribute('data-whop-checkout-prefill-email', 'adrianpaleka@gmail.com');
-        embedDiv.setAttribute('data-whop-checkout-hide-submit-button', 'true');
+        embedDiv.setAttribute('data-whop-checkout-hide-submit-button', 'false');
         
         container.appendChild(embedDiv);
 
@@ -830,15 +786,6 @@
           });
         });
 
-        // Custom checkout button
-        const customBtn = qs('#custom-checkout-btn');
-        if (customBtn) {
-          customBtn.addEventListener('click', () => {
-            if (window.wco && window.wco.submit) {
-              window.wco.submit('whop-checkout-mount');
-            }
-          });
-        }
       }
 
       // ===== Initialization =====
